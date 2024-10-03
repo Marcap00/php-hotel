@@ -70,7 +70,7 @@ $hotels = [
             </thead>
 
             <tbody>
-                <?php foreach ($hotels as $key => $hotel) { ?>
+                <?php foreach ($hotels as $key => $hotel) : ?>
                 <tr>
                     <th scope="row"><?= $key; ?></th>
                     <td><?= $hotel['name']; ?></td>
@@ -83,7 +83,7 @@ $hotels = [
                     <td><?= $hotel['vote']; ?></td>
                     <td><?= $hotel['distance_to_center']; ?> km</td>
                 </tr>
-                <?php } ?>
+                <?php endforeach; ?>
             </tbody>
 
         </table>
