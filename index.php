@@ -56,27 +56,33 @@ $hotels = [
 <body>
     <div class="container">
 
-        <h1>Hotel</h1>
+        <table class="table">
 
-        <ul>
-            <?php foreach ($hotels as $hotel) { ?>
-            <li>
-                <h2><?= $hotel['name']; ?></h2>
-            </li>
-            <li>
-                <p>Descrizione: <?= $hotel['description']; ?></p>
-            </li>
-            <li>
-                <p>Parcheggio: <?= $hotel['parking'] ? 'Disponibile' : 'Non disponibile'; ?></p>
-            </li>
-            <li>
-                <p>Voto: <?= $hotel['vote']; ?></p>
-            </li>
-            <li>
-                <p>Distanza dal centro: <?= $hotel['distance_to_center']; ?> km</p>
-            </li>
-            <?php } ?>
-        </ul>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Descrizione</th>
+                    <th>Parcheggio</th>
+                    <th>Voto</th>
+                    <th>Distanza dal centro</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach ($hotels as $key => $hotel) { ?>
+                <tr>
+                    <th scope="row"><?= $key; ?></th>
+                    <td><?= $hotel['name']; ?></td>
+                    <td><?= $hotel['description']; ?></td>
+                    <td><?= $hotel['parking'] ? 'Disponibile' : 'Non disponibile'; ?></td>
+                    <td><?= $hotel['vote']; ?></td>
+                    <td><?= $hotel['distance_to_center']; ?> km</td>
+                </tr>
+                <?php } ?>
+            </tbody>
+
+        </table>
 
     </div>
 </body>
