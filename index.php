@@ -55,8 +55,9 @@ $hotels = [
 
 <body>
     <div class="container">
+        <h1>Hotel</h1>
 
-        <table class="table">
+        <table class="table table-striped table-hover">
 
             <thead>
                 <tr>
