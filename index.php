@@ -37,7 +37,6 @@ $hotels = [
         'distance_to_center' => 50
     ],
 ];
-
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +75,11 @@ $hotels = [
                     <th scope="row"><?= $key; ?></th>
                     <td><?= $hotel['name']; ?></td>
                     <td><?= $hotel['description']; ?></td>
-                    <td><?= $hotel['parking'] ? 'Disponibile' : 'Non disponibile'; ?></td>
+                    <?php
+                        $parking = $hotel['parking'] ? "Disponibile" : "Non Disponibile";
+                        $class_parking = $hotel['parking'] ? "text-success" : "text-danger";
+                        ?>
+                    <td class="<?= $class_parking ?>"><?= $parking ?></td>
                     <td><?= $hotel['vote']; ?></td>
                     <td><?= $hotel['distance_to_center']; ?> km</td>
                 </tr>
