@@ -1,5 +1,7 @@
 <?php
 
+$parking_filter = $_GET["parking"];
+
 $hotels = [
     [
         'name' => 'Hotel Belvedere',
@@ -55,8 +57,21 @@ $hotels = [
 <body>
     <div class="container">
         <h1>Hotel</h1>
+        <form class="form-control p-3 mb-3" action="index.php">
+            <h3 class="fw-semibold">Filtra:</h3>
+            <div class="mb-3">
+                <label for="parking">Parcheggio:</label>
+                <select class="form-select w-25" name="parking" id="parking">
+                    <option selected value="all">Tutti</option>
+                    <option value="true">Disponibile</option>
+                    <option value="false">Non Disponibile</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary px-4 me-2">Filtra</button>
+            <button type="reset" class="btn btn-warning px-4">Reset</button>
+        </form>
 
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover border">
 
             <thead>
                 <tr>
